@@ -41,13 +41,12 @@
 
                 <ImageView
                     android:id="@+id/ivUploadedImage"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/image_placeholder_background"
                     android:scaleType="centerCrop"
-                    android:layout_marginTop="8dp"
                     android:src="@drawable/ic_upload" />
             </LinearLayout>
 

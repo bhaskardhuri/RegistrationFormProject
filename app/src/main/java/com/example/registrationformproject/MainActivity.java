@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private Uri imageUri;
     private String uploadedImageBase64 = null;
 
+
+
     private FirebaseFirestore firestore;
 
     @Override
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 updateProgress();
             }
 
+
             @Override
             public void afterTextChanged(Editable s) {}
         };
@@ -72,7 +75,11 @@ public class MainActivity extends AppCompatActivity {
         etConfirmPassword.addTextChangedListener(textWatcher);
 
         // Button to choose an image
-        ivUploadedImage.setOnClickListener(v -> chooseImage());
+        ivUploadedImage.setOnClickListener(v -> {
+            chooseImage();
+            // Trigger progress update after choosing an image
+            ivUploadedImage.postDelayed(this::updateProgress, 500);
+        });
 
         // Submit button
         btnSubmit.setOnClickListener(v -> submitDataToFirestore());
@@ -80,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateProgress() {
         progress = 0;
-        if (imageUri != null)
-        {
+        if (ivUploadedImage.getDrawable() != null) { // Ensures image is set
             progress += 10;
         }
+
         if (!etName.getText().toString().isEmpty()) {
             progress += 20;
         }
