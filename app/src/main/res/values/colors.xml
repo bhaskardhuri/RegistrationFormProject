@@ -1,0 +1,11 @@
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="progressBarColor">#FF5722</color>
+    <color name="textColor">#333333</color>
+    <color name="hintColor">#757575</color>
+    <color name="buttonTextColor">#FFFFFF</color>]
+</resources>
